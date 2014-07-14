@@ -1,0 +1,40 @@
+application: korea-plan
+version: 1
+runtime: php
+api_version: 1
+
+handlers:
+# HTML PAGES
+# ex) http://project-id.appspot.com/
+- url: /
+  static_files: index.html
+  upload: index.html
+  mime_type: text/html
+
+# ex) http://project-id.appspot.com/idea.html
+- url: /idea.html
+  static_files: idea.html
+  upload: idea.html
+  mime_type: text/html
+
+# UPLOAD STATIC FILE
+- url: /static/css
+  static_dir: static/css
+  mime_type: text/css
+
+- url: /static/js
+  static_dir: static/js
+  mime_type: text/javascript
+
+# UPLOAD RESOURCE [img: .png | audio: .mp3 | video: .mp4]
+- url: /static/res/img
+  static_dir: static/res/img
+  mime_type: image/png
+
+- url: /static/res/audio
+  static_dir: static/res/audio
+  mime_type: audio/mp3
+
+- url: /static/res/video
+  static_dir: static/res/video
+  mime_type: audio/mp4
