@@ -34,21 +34,19 @@ def baseball_game(player_list, play_log):
 				break
 			else:
 				print player_list
-				for i in range(4):
-					for j in range(i+1):
-						if player_list[i]!=player_list[j]:
-							for i in range(4):
-								if player_list[i] == com_list[i]:
-									strike +=1
-								elif player_list[i] in com_list:
-									ball +=1
-							count +=1
-							print "strike %d" %strike
-							print "ball %d" %ball
-							play_log = play_log+"strike:"+str(strike)+" "
-							play_log = play_log+"ball:"+str(ball)+"\n\n"
-						else:
-							print "겹치지 않게 입력해주세요."
+				if player_list[0] != player_list[1] and player_list[0] != player_list[2] and player_list[0]!= player_list[3] and player_list[1] != player_list[2] and player_list[1] !=player_list[3] and player_list[2] != player_list[3]:
+					for i in range(4):
+						if player_list[i] == com_list[i]:
+							strike +=1
+						elif player_list[i] in com_list:
+							ball +=1
+					count +=1
+					print "strike %d" %strike
+					print "ball %d" %ball
+					play_log = play_log+"strike:"+str(strike)+" "
+					play_log = play_log+"ball:"+str(ball)+"\n\n"
+				else:
+					print "겹치지 않게 입력해주세요."
 	print com_list
 	print "당신은 %d 회 만에 맞추셨습니다!" %count
 	play_log = play_log+"축하합니다! 당신은 "+str(count)+"회 만에 맞추셨습니다!"+"\n\n"
