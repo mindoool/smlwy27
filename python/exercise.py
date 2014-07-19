@@ -9,7 +9,7 @@ soup = BeautifulSoup(data)
 
 for item in soup.select('h3 a'):
 	title = item.text.replace("!","").replace("\"","").replace(":","").replace("?","") +".txt"
-	title = "07.17/" + title
+	title = "07.18/" + title
 	url = item.get('href')
 	
 	file = open(title,"w")
@@ -18,3 +18,6 @@ for item in soup.select('h3 a'):
 	
 	for s in soup2.findAll('.content p'):
 		file.write(s.text.encode('utf-8'))
+
+
+
